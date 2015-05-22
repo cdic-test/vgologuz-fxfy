@@ -3,7 +3,8 @@ FROM fedora:latest
 
 RUN yum install -y dnf dnf-plugins-core \
     && mkdir -p /etc/yum.repos.d/
-RUN dnf copr enable -y msuchy/copr
+RUN dnf copr enable -y msuchy/copr && \
+    dnf copr enable -y msuchy/scl-utils
 RUN dnf clean all
 
 ### CDIC END
